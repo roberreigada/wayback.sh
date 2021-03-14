@@ -1,5 +1,3 @@
-[![Follow on Twitter](https://img.shields.io/twitter/follow/reigada.svg?logo=twitter)](https://twitter.com/reigada)
-
 wayback.sh is a simple script written in Bash used to extract data from the Waybackmachine.
 
 # Basic usage
