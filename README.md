@@ -14,7 +14,7 @@ bash wayback.sh https://www.google.com/robots.txt google_robots.txt
 
 <b>Example 2:</b>
 
-This command will extract the robots.txt file of google.com from the Waybackmachine for just the number of dates you specified in the third parameter. If you set the <number_of_different_dates_to_extract> parameters to 3 the tool will pick the first date, the last date, and 3 different dates equally distant in time
+This command will extract the robots.txt file of google.com from the Waybackmachine for just the number of dates you specified in the third parameter. If you set the <number_of_different_dates_to_extract> parameter to 3 the tool will pick the first date, the last date, and 3 different dates equally distant in time
 ```sh
 bash wayback.sh https://www.google.com/robots.txt google_robots.txt 3
 ```
