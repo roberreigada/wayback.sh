@@ -27,6 +27,6 @@ bash wayback.sh https://www.google.com/ google.com.txt 3
 ```
 
  # Features
- - wayback.sh detects if the url contains a robots.txt path. If that's the case it will only extract the lines that contain "allow" (which also inludes dis-allow lines). This way we can easily create wordlists based in the endpoints extracted. The output will all be saved into the file specified after deleting all the duplicated entries.
+ - wayback.sh detects if the url contains a robots.txt path. If that's the case it will only extract the lines that contain "allow" (which also includes dis-allow lines). This way we can easily create wordlists based in the endpoints extracted. The output will all be saved into the file specified after deleting all the duplicated entries.
  - If the endpoint in the url is not robots.txt wayback.sh will create a folder to store the results with the name format of YYYYMMDD_hhmmss, for example => "20210314_000118". With all the results obtained wayback.sh will grep and extract all html/php/asp/aspx/js files and put them into htmlphpaspxjsfiles.txt. Also it will check all the responses saved and store all the different variables found in the code in the file parameters.txt.
  
