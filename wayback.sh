@@ -35,6 +35,9 @@ printf "\n"
 if [[ "$ndates" =~ ^[0-9]+$ ]] && [[ "$ndates" -ne "0" ]]; then
 	printf "${YELLOW}Dates extracted${GREEN}\n"
 	printf "${RED}-----------------------------------------------------------------------${GREEN}\n"
+	if [[ "$var_dates" -lt "$ndates" ]]; then
+		var_dates=$ndates
+	fi
 	step=$((var_dates / ndates))
 	head -1 tmpdates.txt > tmpdates2.txt
 	c=1
