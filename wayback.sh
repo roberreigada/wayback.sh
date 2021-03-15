@@ -25,6 +25,9 @@ if test -f "tmpdates.txt"; then
 	var_dates=$(wc -l "tmpdates.txt" | awk '{print $1}')
 else
 	var_dates=0
+	printf "${YELLOW}There are no results stored in Waybackmachine. wayback.sh completed [\xE2\x9C\x94]\n"
+	printf "${NC}\n"
+	exit 0
 fi
 printf "${YELLOW}Total dates stored in waybackmachine: ${var_dates}${GREEN}\n"
 printf "\n"
@@ -72,11 +75,11 @@ else
 		curl -sL https://web.archive.org/web/${date}/${url} | tr '\r' '\n' | sort -u | tee -a ${epoch_to_date}/${date}.txt
 		printf "\n"
 	done
-	# Extract all html/php/asp/aspx/js files
-	cat ${epoch_to_date}/*.txt | grep -i "\.html\|\.php\|\.asp\|\.aspx\|\.js" | sort -u > ${epoch_to_date}/htmlphpaspxjsfiles
+	# Extract all html/php/asp/aspx/xml/js files
+	cat ${epoch_to_date}/*.txt | grep -i "\.html\|\.php\|\.asp\|\.aspx\|\.xml\|\.js" | sort -u > ${epoch_to_date}/htmlphpaspxxmljsfiles
 	# Extract possible parameters
 	cat ${epoch_to_date}/*.txt | grep -Eo "var [a-zA-Z0-9]+" | awk -F " " '{print $2}' | sort -u > ${epoch_to_date}/parameters.txt
-	mv ${epoch_to_date}/htmlphpaspxjsfiles ${epoch_to_date}/htmlphpaspxjsfiles.txt
+	mv ${epoch_to_date}/htmlphpaspxxmljsfiles ${epoch_to_date}/htmlphpaspxxmljsfiles.txt
 fi
 printf "\n"
 printf "${YELLOW}wayback.sh completed [\xE2\x9C\x94]\n"
